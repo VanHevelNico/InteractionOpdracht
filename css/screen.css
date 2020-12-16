@@ -1,0 +1,816 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+@import url("https://use.typekit.net/yay7cuv.css");
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+    /* colors */
+    --global-color-alpha-xxx-light: #FFFFFF;
+    --global-color-alpha-xx-light: #D2D3DA;
+    --global-color-alpha-x-light: #757586;
+    --global-color-alpha-light: #444455;
+    --global-color-alpha: #2B2E3F;
+    --global-color-alpha-dark: #212634;
+    --global-color-alpha-x-dark: #0F3557;
+
+    --global-color-beta-xxx-light: #4FFFB0;
+    --global-color-beta-xx-light: #65F7B6;
+    --global-color-beta-x-light: #71DEAD;
+    --global-color-beta-light:#78C4A2;
+    --global-color-beta: #69AB8D;
+    --global-color-beta-dark: #599178;
+    --global-color-beta-x-dark: #497863;
+
+    --global-color-orange: #E28737;
+
+    --global-color-red:#E24137;
+    --global-color-red-dark:#BA463F;
+
+    /* Whitespace */
+    --global-baseline: 8px;
+    --global-whitespace-xxs: var(--global-baseline); /* 8 */
+    --global-whitespace-xs: calc(var(--global-baseline) * 2); /* 16 */
+    --global-whitespace-sm: calc(var(--global-baseline) * 3); /* 24 */
+    --global-whitespace-md: calc(var(--global-baseline) * 4); /* 32 */
+    --global-whitespace-lg: calc(var(--global-baseline) * 5); /* 40 */
+    --global-whitespace-xl: calc(var(--global-baseline) * 6); /* 48 */
+
+    /* transitions */
+    --global-transition-alpha: .1s;
+
+    --global-font-space: "halyard-display", Arial, Helvetica, sans-serif;
+}
+
+
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "halyard-display",Helvetica, arial, sans-serif;
+    color: var(--global-color-alpha-xx-light);
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(var(--global-color-alpha-x-light), var(--global-color-alpha-light));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+    background: var(--global-color-beta);
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background: var(--global-color-beta);
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 29px;
+    line-height: 43.5px;
+    margin: 0 0 24px;
+}
+
+h2 {
+    font-size: 23px;
+    line-height: 34.5px;
+    margin: 0 0 24px;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    margin: 0 0 24px;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 27px;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 1.5rem;
+}
+
+ul,
+ol {
+    padding-left: 24px;
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote {
+    font-style: normal;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 24px;
+}
+
+a {
+    transition: all var(--global-transition-alpha);
+    color: var(--global-color-alpha);
+}
+
+
+a:hover,
+a:focus {
+    background-color: var(--global-color-beta-x-dark);
+}
+
+label,
+input {
+    display: block;
+}
+
+select {
+    width: 100%;
+}
+
+input::placeholder {
+    color: var(--global-color-neutral-light);
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+/*
+    app
+*/
+.c-app__html {
+    background: var(--global-color-alpha-light);
+}
+
+.c-app {
+    min-height: 100vh;
+    max-width: 37.5rem;
+    margin: auto;
+    padding:  3rem  3rem 0  3rem;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+}
+
+.c-item {
+    grid-column: span 14;
+}
+
+.c-icon {
+    max-width: 26rem;
+    margin: auto;
+    padding: 0 3rem 0 3rem;
+}
+
+.c-icon__title {
+    font-weight: 600;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.c-icon__svg {
+    transition: 750ms;
+}
+
+.c-data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1em;
+    padding: 1em;
+}
+
+.c-data__values {
+    text-align: right;
+}
+
+.c-chart__buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+}
+
+.c-chart__button {
+    margin: auto;
+    grid-column: span 1;
+    color: var(--global-color-alpha-xx-light);
+    background-color: var(--global-color-alpha-x-dark);
+    padding: 0 var(--global-whitespace-sm) 0 var(--global-whitespace-sm);
+    border-radius: 2rem;
+}
+/*
+.c-notification {
+    position: relative;
+}
+*/
+.c-notification__text {
+    padding: 1rem;
+    margin: 0;
+    background-color: var(--global-color-alpha);
+    /*position: absolute;
+    bottom: 0;
+    left: 0;*/
+}
+
+/*
+    Landing
+*/
+
+.c-landing {
+    max-width: 62.5rem;
+    margin: auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+}
+
+.c-landing__mockup {
+    align-self: center;
+    grid-column: span 7;
+    width: 12rem;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+.c-landing__form {
+    grid-column: span 14;
+    display: block;
+    margin:auto;
+    background-color: var(--global-color-alpha-x-light);
+    border-radius: 1rem;
+}
+
+.c-landing__mockup {
+    display: block;
+    grid-column: span 14;
+}
+
+.c-landing__stores {
+    padding:0 var(--global-whitespace-md) var(--global-whitespace-md) var(--global-whitespace-md);
+    display: grid;
+    grid-column: span 14;
+    grid-template-columns: repeat(1,1fr);
+    row-gap: 1rem;
+}
+
+.c-landing__stores-item {
+    display: block;
+    margin: auto;
+    grid-column: span 1;
+    max-width: 10rem;
+}
+
+/*
+    Component: Form
+    ---
+    Class to style the form layout
+*/
+
+.c-form {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: var(--global-whitespace-md) var(--global-whitespace-md) 0 var(--global-whitespace-md);
+    column-gap: var(--global-whitespace-xs);
+}
+
+.c-form__title {
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--global-color-beta-x-light);
+    text-align: left;
+    grid-column: span 6;
+}
+
+.c-form__item {
+    grid-column: span 6;
+    border: var(--global-color-alpha-xx-light) 1px solid;
+    border-radius: var(--global-whitespace-xs);
+}
+
+.c-form__item--email {
+    grid-column: span 6;
+}
+
+.c-form__item--button {
+    grid-column: span 6;
+    border: none;
+}
+
+@media (min-width: 500px) {
+    .c-landing__stores {
+        grid-column: span 7;
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+    .c-form__item {
+        grid-column: span 3;
+    }
+
+    .c-form__item--email {
+        grid-column: span 6;
+    }
+
+    .c-form__item--button {
+        grid-column: span 6;
+        border: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .c-landing {
+        height: 100vh;
+    }
+
+    .c-landing__mockup {
+        grid-column: span 7;
+        margin: auto;
+        margin-bottom: none;
+        width: 18rem;
+    }
+
+    .c-landing__form {
+        grid-column: span 7;
+    }
+
+}
+/*
+    Component: Input
+    ---
+    Class to put on all input="text" like form inputs
+*/
+
+.c-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--input-border-color, var(--global-color-neutral-light));
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--input-color, var(--global-color-neutral-xx-light));
+    
+    line-height: calc(var(--global-baseline) * 3);
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border var(--global-transition-alpha);
+}
+
+/*
+    Component: Form field
+    ---
+    Class to style form field: floating label, error
+*/
+
+/*
+    Component: btn
+    ---
+*/
+
+.c-button {
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--global-color-beta-light);
+    padding: var(--global-whitespace-xxs) var(--global-whitespace-xs);
+    color: #fff;
+    font-weight: 400;
+    width: 100%;
+    outline: none;
+    transition: all var(--global-transition-alpha);
+}
+
+.c-button:hover {
+    background-color: var(--global-color-beta-x-light);
+}
+
+.c-button:active {
+    background-color: var(--global-color-beta-dark);
+    box-shadow: none;
+}
+
+.c-form-field {
+    position: relative;
+}
+
+.c-label {
+    position: absolute;
+    top: 0.5rem;
+    left: 1em;
+    padding: 0.25rem 0.5rem;
+    will-change: transform;
+    transform: translateY( 0 );
+    transition: transform 200ms ease-in-out;
+    color: #FFFFFF;
+    background: var(--global-color-alpha-x-light);
+}
+
+.c-form-field:focus-within .c-label {
+    transform: translateY(-24px);
+}
+
+.c-search {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.c-search__province {
+    grid-column: span 4;
+}
+
+.c-search__icon {
+    grid-column: span 1;
+    fill: var(--global-color-alpha-xx-light);
+    height: 2.5rem ;
+    padding: 0.25rem;
+}
+
+.c-search__input {
+    width: 100%;
+    grid-column: span 5;
+    padding: 0.5rem;
+    border: none;
+    border-radius:1rem 1rem 0 0 ;
+    font-size: 1rem;
+    margin: 0;
+    transition: 750ms;
+
+  }
+  
+  .c-suggestions {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    grid-column: span 5;
+  }
+  
+  .c-suggestions li a {
+    font-weight: 400;
+    background-color: var(--global-color-alpha-xxx-light);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-bottom: var(--global-color-alpha-x-light) 1px solid ;
+    font-size: 1rem;
+    width: 100%;
+    display: block;
+    margin-top: -1px;
+  }
+  
+  .c-suggestions li a:hover:not(.header) {
+    background-color: #eee;
+  }
+
+
+.is-floating .c-label{
+    transform: translateY(-24px);
+}
+
+.has-error {
+    border-color: var(--global-color-red);
+    color: var(--global-color-red-dark);
+}
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+
+.u-color-neutral {
+    color: var(--global-color-neutral);
+}
+
+.u-color-neutral-dark {
+    color: var(--global-color-neutral-dark);
+}
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0 !important;
+}
+
+.u-mb-clear {
+    margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+    margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+    margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+    margin-bottom: 16px !important;
+}
+
+.u-mb-lg {
+    margin-bottom: 32px !important;
+}
+
+.u-mb-xl {
+    margin-bottom: 48px !important;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-xs {
+    max-width: 27rem !important;
+}
+
+.u-max-width-sm {
+    max-width: 39rem !important;
+}
+
+.u-max-width-md {
+    max-width: 50rem !important;
+}
+
+.u-max-width-lg {
+    max-width: 63.5rem !important;
+}
+
+.u-max-width-none {
+    max-width: none !important;
+}
+
+
+/*
+    Utilities: align
+    ---
+    Utility classes align text or components
+*/
+
+.u-align-text-center {
+    text-align: center;
+}
+
+.u-align-center {
+    margin: 0 auto;
+}
+
+/*
+    Utilities: text
+    Utility classes to create smaller or bigger test
+*/
+
+.u-text-sm {
+    font-size: 14px;
+}
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
+
+/* Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in mobile first design
+*/
+
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+
+/* Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+
+/* Large devices (landscape tablets, desktops, 992px and up)
+@media (min-width: 992px) {}
+*/
+
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
