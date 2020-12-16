@@ -340,6 +340,10 @@ input::placeholder {
     padding: 0 var(--global-whitespace-sm) 0 var(--global-whitespace-sm);
     border-radius: 2rem;
 }
+
+.c-chart__chart {
+    margin-top: 1rem;
+}
 /*
 .c-notification {
     position: relative;
