@@ -193,7 +193,6 @@ const searchBar = () => {
         li = ul.getElementsByTagName("li");
         if(filter.length > 1) { 
             htmlSuggestions.style.display = "block";
-            htmlInput.style.borderRadius = "1rem 1rem 0 0" ;
 
         } else {
             htmlSuggestions.style.display = "none";
@@ -207,7 +206,6 @@ const searchBar = () => {
 
             } else {
                 li[i].style.display = "none";
-                htmlInput.style.borderRadius = "1rem";
             }
             }
     });
@@ -246,8 +244,6 @@ const init = function() {
     searchBar();
     htmlSuggestions.style.display = "none";
     htmlInput.value = province;
-    htmlInput.style.borderRadius = "1rem";
-
 }
 
 document.addEventListener("DOMContentLoaded", init);

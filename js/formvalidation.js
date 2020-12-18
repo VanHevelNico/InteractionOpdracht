@@ -3,13 +3,15 @@ let htmlSignupButton, htmlError, firstname = {}, surname = {}, email = {};
 const showError = function(item, errorMsg) {
     item.label.classList.add("has-error");
     item.formfield.classList.add("has-error");
-    htmlError.innerHTML = errorMsg;
+    item.input.classList.add("has-error");
+    item.error.innerHTML = errorMsg;
 }
 
 const removeError = function(item) {
     item.label.classList.remove("has-error");
     item.formfield.classList.remove("has-error");
-    htmlError.innerHTML = "Get notified about updates";
+    item.input.classList.remove("has-error");
+    item.error.innerHTML = "";
 }
 
 
@@ -77,19 +79,21 @@ const handleValidation = function() {
 
 const init = function() {
     console.log("Document loaded");
-    htmlError = document.querySelector(".js-error");
 
     firstname.formfield = document.querySelector(".js-firstname");
     firstname.label = firstname.formfield.querySelector(".js-label");
     firstname.input = firstname.formfield.querySelector(".js-input");
+    firstname.error = firstname.formfield.querySelector(".js-error");
     
     surname.formfield = document.querySelector(".js-surname");
     surname.label = surname.formfield.querySelector(".js-label");
     surname.input = surname.formfield.querySelector(".js-input");
+    surname.error = surname.formfield.querySelector(".js-error");
 
     email.formfield = document.querySelector(".js-email");
     email.label = email.formfield.querySelector(".js-label");
     email.input = email.formfield.querySelector(".js-input");
+    email.error = email.formfield.querySelector(".js-error");
 
     htmlSignupButton = document.querySelector(".js-button");
 
